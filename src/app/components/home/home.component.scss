@@ -1,0 +1,39 @@
+.example-sidenav-content {
+    background-color: #3F8BBF;
+    position:relative;
+    height: 100%;
+    width:100%;
+}
+
+.example-sidenav-content img{
+ 
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+}
+
+.example-sidenav {
+    padding: 20px;
+  }
+
+  .black-btn{
+    background-color: #191a1cf0;
+    border-radius: 0;
+
+}
+.transparent-btn{
+    font-family: 'Roboto',monospace;
+    background-color: transparent;
+    border-radius: 0;
+
+}
+
+
+
+.toggle-btn-div{
+    float:right;
+    margin: 16px 16px 0 0;
+}

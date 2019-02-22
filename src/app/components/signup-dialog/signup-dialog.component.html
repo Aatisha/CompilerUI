@@ -1,0 +1,71 @@
+<div class="signup-main">
+  <div class="signup-img">
+    <mat-icon id="signup-icon" svgIcon="signup"></mat-icon>
+  </div>
+  <div class="signup-form">
+    <h1 mat-dialog-title>Signup</h1>
+    <div mat-dialog-content class="form-wrapper">
+      <form (ngSubmit)="onSubmit(formRequest)" #signUpForm="ngForm"> 
+          <mat-form-field class="signup-field" appearance="outline">
+            <mat-label>User Id</mat-label>
+            <input matInput placeholder="Enter User Id" id="userId" [(ngModel)]="formRequest.userId" name="userId" required>
+          </mat-form-field>
+
+          <mat-form-field class="signup-field" appearance="outline">
+              <mat-label>Password</mat-label>
+              <input type="password" matInput placeholder="Enter Password" id="password" [(ngModel)]="formRequest.password" name="password" required>
+          </mat-form-field>
+
+          <mat-form-field class="signup-field" appearance="outline" >
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Enter Name" [(ngModel)]="formRequest.name" name="name" required>
+          </mat-form-field>
+
+          <mat-form-field class="signup-field" appearance="outline" >
+            <mat-label>Email</mat-label>
+            <input type="email" matInput placeholder="Enter Email" [(ngModel)]="formRequest.email" name="email" required>
+          </mat-form-field>
+
+          <mat-form-field class="signup-field" appearance="outline" >
+            <mat-label>Department</mat-label>
+            <mat-select placeholder="Select Department" [(ngModel)]="formRequest.dept" name="dept" required>
+              <mat-option *ngFor="let dept of depts" [value]="dept">
+                {{dept}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        <div class="radio-div">
+            <mat-radio-group [(ngModel)]="formRequest.profile" name="ptype" required>
+                <mat-radio-button *ngFor="let type of types" [value]="type" style="margin-left:10px;">{{type}}</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div *ngIf="formRequest.profile=='Student'" class="optional-div">
+            <mat-form-field appearance="outline" style="width: 30%;" >
+                <mat-label>Year</mat-label>
+                <mat-select placeholder="Select Year" [(ngModel)]="formRequest.year" name="year" required>
+                  <mat-option *ngFor="let year of years" [value]="year">
+                    {{year}}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline" style="width: 30%;margin-left: 10%;" id="userId" >
+                <mat-label>Section</mat-label>
+                <mat-select placeholder="Select Section" [(ngModel)]="formRequest.section" name="sec" required>
+                  <mat-option *ngFor="let sec of section" [value]="sec">
+                    {{sec}}
+                  </mat-option>
+                </mat-select>
+                </mat-form-field>
+        </div>
+        <div>
+            <button mat-button (click)="onNoClick()">Cancel</button>
+            <button type="submit" [disabled]="!signUpForm.form.valid" mat-button>Register</button>
+        </div>
+      </form>
+    </div>
+    <div mat-dialog-actions>
+      <!-- <button mat-button (click)="onNoClick()">Cancel</button>
+      <button mat-button (click)="onNoClick()" cdkFocusInitial>Register</button> -->
+    </div>
+  </div>
+</div>   

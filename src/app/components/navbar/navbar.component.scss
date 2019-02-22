@@ -1,0 +1,31 @@
+.example-icon {
+    padding: 0 14px;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .navbar
+  {
+    background-color: rgba(255, 255, 255, 0.97)!important;
+    color: #000;
+    border-bottom: 1px solid #b5b5b56e;
+    -webkit-box-shadow: 0 4px 12px 0 rgba(0,0,0,.05)!important; 
+    -moz-box-shadow: 0 4px 12px 0 rgba(0,0,0,.05)!important;
+    box-shadow: 0 4px 12px 0 rgba(0,0,0,.05)!important;
+  }
+
+  .brand-img
+  {
+    height: 40px;
+    margin-right: 10px;
+    margin-bottom: 4px;
+  }
+  .user-icon
+  {
+    margin-top: 8px;
+    float: right;
+    color: #606061;
+    font-size: 1.4em;
+  }

@@ -1,0 +1,24 @@
+<div class="login-div">
+  <mat-icon id="login-icon" svgIcon="login"></mat-icon>
+
+
+  <div class="login-form-div">
+    <form (ngSubmit)="onSubmit(formRequest)" #loginUpForm="ngForm">
+      <p>
+        <mat-form-field class="login-field" appearance="outline">
+          <mat-label>User Id</mat-label>
+          <input matInput placeholder="Enter User Id" name="userId" id="userId" [(ngModel)]="formRequest.userId">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="login-field" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput placeholder="Enter Password" name="password" id="password" [(ngModel)]="formRequest.password">
+        </mat-form-field>
+      </p>
+      <p>
+        <button  type="submit" mat-flat-button class="login-field black-btn" color="primary">Login</button>
+      </p>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="full-height">
+    <mat-sidenav-container class="full-height">
+        <mat-sidenav #sidenav class="example-sidenav" mode="push" position="end">
+          <app-login></app-login>
+        </mat-sidenav>
+        <mat-sidenav-content>
+          <div class="example-sidenav-content">
+            <div class="toggle-btn-div">
+                <button mat-flat-button class="transparent-btn" color="primary" (click)="openDialog()">Signup</button>
+                <button mat-flat-button class="black-btn" color="primary" (click)="sidenav.toggle()">Login</button>
+                
+            </div>
+            <!-- <button type="button" mat-button (click)="sidenav.toggle()">
+              Toggle sidenav
+            </button> -->
+            <img src="../../../assets/images/gulp.gif">
+          </div>
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+</div>
