@@ -3,6 +3,8 @@ import { LoginReq } from 'src/app/models/LoginReq';
 import { Md5 } from 'ts-md5';
 import { RestApiService } from 'src/app/services/rest-api.service';
 import { Router } from '@angular/router';
+import { MatSnackBar} from '@angular/material';
+import { LoginDataService } from 'src/app/services/login-data.service';
 
 @Component({
   selector: 'app-login',
@@ -12,8 +14,8 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   public formRequest=new LoginReq();
-  constructor(public service:RestApiService,private router : Router) { }
-
+  constructor(public service:RestApiService,private router : Router,private snackBar: MatSnackBar,private loginService: LoginDataService) { }
+  response :any;
   ngOnInit( ) {
   }
 
@@ -23,7 +25,9 @@ export class LoginComponent implements OnInit {
     console.log(request);
 
     this.service.login(request).subscribe(response=>{ 
-      console.log('Response-'+response);
+      console.log('Response-'+response.responseMessage);
+      this.loginService.loginResponse=response;
+      this.snackBar.open(response.responseMessage, 'Ok', {duration: 1500});
       this.router.navigate(['/dashboard']);
     });
 
