@@ -4,6 +4,7 @@ import { Lab } from 'src/app/models/lab';
 import { Observable,throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { MatSnackBar} from '@angular/material';
+import {VariableService} from '../variable.service';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json'
@@ -13,8 +14,8 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AddLabService {
-  addLabUrl='http://192.168.31.198:8070/api/v1/labs/add';
-  constructor(public http:HttpClient,private snackBar: MatSnackBar,private zone: NgZone) { }
+  addLabUrl='labs/add';
+  constructor(public http:HttpClient,private snackBar: MatSnackBar,private zone: NgZone,private variable:VariableService) { }
 //ERROR HANDLING METHOD
   ///////////////////////////////////////////////////////////////////////////
   private handleError(errorResponse: HttpErrorResponse) {
@@ -37,7 +38,7 @@ export class AddLabService {
   addLab(request:Lab):Observable<Lab>
   {
     console.log('service called');
-    return this.http.post<Lab>(this.addLabUrl,request,httpOptions).pipe(catchError(this.handleError.bind(this)));
+    return this.http.post<Lab>(this.variable.apiUrl+this.addLabUrl,request,httpOptions).pipe(catchError(this.handleError.bind(this)));
   }
   
 }

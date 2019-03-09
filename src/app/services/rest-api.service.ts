@@ -7,7 +7,7 @@ import { catchError } from 'rxjs/operators';
 import { LoginReq } from '../models/LoginReq';
 import { LoginRes } from '../models/LoginRes';
 import { MatSnackBar} from '@angular/material';
-
+import {VariableService} from './variable.service';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json'
@@ -18,11 +18,11 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class RestApiService {
-  signupStudentUrl='http://192.168.31.198:8070/api/v1/users/signup/student';
-  signupTeacherUrl='http://192.168.31.198:8070/api/v1/users/signup/user';
-  loginUrl='http://192.168.31.198:8070/api/v1/users/login';
+  signupStudentUrl='users/signup/student';
+  signupTeacherUrl='users/signup/user';
+  loginUrl='users/login';
 
-  constructor(private http: HttpClient,private snackBar: MatSnackBar,private zone: NgZone) { }
+  constructor(private http: HttpClient,private snackBar: MatSnackBar,private zone: NgZone,private variable:VariableService) { }
 
  //ERROR HANDLING METHOD
   ///////////////////////////////////////////////////////////////////////////
@@ -46,18 +46,18 @@ export class RestApiService {
   signupStudent(request:SignupReq):Observable<SignupReq>
   {
     console.log('service called');
-    return this.http.post<SignupReq>(this.signupStudentUrl,request,httpOptions);
+    return this.http.post<SignupReq>(this.variable.apiUrl+this.signupStudentUrl,request,httpOptions);
   }
 
   signupTeacher(request:SignupReq):Observable<SignupReq>
   {
     console.log('service called');
-    return this.http.post<SignupReq>(this.signupTeacherUrl,request,httpOptions);
+    return this.http.post<SignupReq>(this.variable.apiUrl+this.signupTeacherUrl,request,httpOptions);
   }
 
   login(request:LoginReq):Observable<LoginRes>
   {
     console.log('service called');
-    return this.http.post<LoginRes>(this.loginUrl,request,httpOptions).pipe(catchError(this.handleError.bind(this)));
+    return this.http.post<LoginRes>(this.variable.apiUrl+this.loginUrl,request,httpOptions).pipe(catchError(this.handleError.bind(this)));
   }
 }
