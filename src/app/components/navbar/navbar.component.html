@@ -3,9 +3,15 @@
     <div class="container">   
       <span><img src="../../../assets/images/brand-logo-navbar.gif" class="brand-img"/></span> 
       <span>Compiler</span>
-      <i class="material-icons user-icon">
+      <div class="pull-right"> 
+      <span class="material-icons user-icon">
           account_circle
-          </i>
+      </span>
+      <span class="username">{{username}}</span>
+      <button mat-icon-button (click)="logout()">
+          <mat-icon aria-label="Logout">power_settings_new</mat-icon>
+        </button>
+      </div>
     </div>
     </mat-toolbar-row>
   </mat-toolbar>

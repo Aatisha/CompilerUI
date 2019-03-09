@@ -1,0 +1,45 @@
+<div class="create-lab-main">
+    <div class="create-lab-img">
+      <mat-icon id="create-lab-icon" svgIcon="signup"></mat-icon>
+    </div>
+    <div class="create-lab-form">
+      <h1 mat-dialog-title>Create Lab</h1>
+      <div mat-dialog-content class="form-wrapper">
+        <form (ngSubmit)="onSubmit(formRequest)" #createLabForm="ngForm"> 
+            <mat-form-field class="create-lab-field" appearance="outline">
+              <mat-label>Lab Name</mat-label>
+              <input matInput placeholder="Enter the name of the lab" id="labName" [(ngModel)]="formRequest.labName" name="labName" required>
+            </mat-form-field>
+  
+              <mat-form-field appearance="outline" style="width:70%" >
+                  <mat-label>Year</mat-label>
+                  <mat-select placeholder="Select Year" [(ngModel)]="formRequest.year" name="year" required>
+                    <mat-option *ngFor="let year of years" [value]="year">
+                      {{year}}
+                    </mat-option>
+                  </mat-select>
+              </mat-form-field>
+              <mat-form-field appearance="outline" style="width:70%">
+                  <mat-label>Section</mat-label>
+                  <mat-select placeholder="Select Section" [(ngModel)]="formRequest.section" name="sec" required>
+                    <mat-option *ngFor="let sec of section" [value]="sec">
+                      {{sec}}
+                    </mat-option>
+                  </mat-select>
+                  </mat-form-field>
+              <mat-form-field appearance="outline" style="width:70%">
+                  <mat-label>Assign To</mat-label>
+                  <mat-select placeholder="Select Teacher" [(ngModel)]="formRequest.userId" name="userId" required>
+                    <mat-option *ngFor="let user of users" [value]="user.userId">
+                      {{user.name}}
+                    </mat-option>
+                  </mat-select>
+                  </mat-form-field>
+          <div>
+              <button mat-button (click)="onNoClick()">Cancel</button>
+              <button type="submit" [disabled]="!createLabForm.form.valid" mat-button>Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>   

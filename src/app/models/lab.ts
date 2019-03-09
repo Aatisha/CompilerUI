@@ -5,4 +5,5 @@ export class Lab{
     public section:string;
     public assignee:string;
     public userId:string;
+    public responseMessage:string;
 }

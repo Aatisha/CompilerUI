@@ -1,8 +1,21 @@
-<app-navbar></app-navbar>
-<div class="container">
+<app-navbar [username]="user.name"></app-navbar>
+<div class="container margin-top-x">
+    <div class="row">
+        <div class="col-10">
+            <h2 *ngIf="user.profile==='Student'">Available Lab Sessions</h2>
+            <h2 *ngIf="user.profile==='Teacher'">Labs Allocated</h2>
+            <h2 *ngIf="user.profile==='HOD'">Labs Assigned</h2>
+        </div>
+        <div  *ngIf="user.profile==='HOD'" class="col-2">
+          <button mat-flat-button style="float: right;" color="primary" (click)="openDialog()"> <i class="material-icons">
+              create_new_folder
+              </i> CREATE</button>
+        </div>
+      </div>
   <div class="row">
     <div *ngFor="let lab of user.lab"  class="col-md-3 margin-top-x">
-      <app-dashboard-card [lab]="lab"></app-dashboard-card>
+      <app-dashboard-card [lab]="lab" [profile]="user.profile"></app-dashboard-card>
     </div>
   </div>
+  
 </div>

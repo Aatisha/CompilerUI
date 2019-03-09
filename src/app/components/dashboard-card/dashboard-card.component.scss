@@ -4,7 +4,6 @@
   }
 .lang-name
 {
-    text-align: center;
     width: 100%;
     font-weight: 700;
 }
@@ -27,16 +26,14 @@
     transform: translateX(-50%) translateY(-50%);
   }
       
-  .thumbnail
-  {
-    display: inline-block;
-    float: none;
-    padding: 4px;
-    line-height: 1.42857143;
-    background-color: #fff;
-    width: 100%;
-    height:100%;
-  }
+  // .thumbnail
+  // {
+  //   display: inline-block;
+  //   float: none;
+  //   background-color: #fff;
+  //   width: 100%;
+  //   height:100%;
+  // }
   // // Medium devices (tablets, 768px and up)
   // @media (max-width: 768px) { 
   //   .thumbnail{
@@ -51,6 +48,7 @@
   //     height:15vh;
   //   }
   //  }
+
 .margin-top-x
 {
     margin-top: 15px;
@@ -58,4 +56,8 @@
 .content-height
 {
     height:200px;
+}
+.list-card
+{
+  list-style-type:none; line-height: 2;
 }

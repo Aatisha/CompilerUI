@@ -1,5 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Lab } from 'src/app/models/lab';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-card',
@@ -9,12 +10,18 @@ import { Lab } from 'src/app/models/lab';
 export class DashboardCardComponent implements OnInit {
 
   @Input() lab: Lab;
+  @Input() profile: string;
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
-  
+
+  redirectQuestionListPage()
+  {
+    this.router.navigate(['/questionlist',this.lab.labId])
+  }
+
   getImage(labName:string)
   {
     switch(labName)

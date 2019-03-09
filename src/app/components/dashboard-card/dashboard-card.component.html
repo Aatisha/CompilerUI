@@ -1,15 +1,44 @@
-<mat-card class="example-card">
-  <mat-card-header >
-    <mat-card-title class="lang-name">{{lab.labName}}</mat-card-title>
-  </mat-card-header>
-  <div class="content-height">
-      <span class="thumbnail">
-          <div class="image">
-              <img  src="../../../assets/images/{{getImage(lab.labName)}}">
-          </div>
-      </span>
-    </div>
-  <mat-card-actions>
-    <button mat-button>GO</button>
-  </mat-card-actions>
-</mat-card>
+<!-- <mat-card class="example-card">
+    <mat-card-header >
+      <mat-card-title class="lang-name">{{lab.labName}}</mat-card-title>
+    </mat-card-header>
+    <div class="content-height">
+        <span class="thumbnail">
+            <div class="image">
+                <img  src="../../../assets/images/{{getImage(lab.labName)}}">
+            </div>
+        </span>
+      </div>
+    <mat-card-actions>
+      <button mat-button *ngIf="profile==='Student' ||  profile==='Teacher'">GO</button>
+      <button mat-button *ngIf="profile==='HOD'">EDIT</button>
+    </mat-card-actions>
+  </mat-card> -->
+  <mat-card>
+      
+                  <!-- <img   mat-card-image src="../../../assets/images/{{getImage(lab.labName)}}" style="max-height:160px"> -->
+                 
+                      <div mat-card-image class="image">
+                          <img   src="../../../assets/images/{{getImage(lab.labName)}}">
+                      </div>
+            
+        <mat-card-content>
+            <h3 class="lang-name">{{lab.labName}}</h3>
+            <div>
+                <ul class="list-card" *ngIf="profile==='Student'; else others">
+                    <li><b>Lab Incharge : </b>&nbsp; {{lab.userId}}</li>
+                  </ul>
+                <ng-template #others>
+                    <ul class="list-card">
+                      <li *ngIf="profile==='Teacher'"><b>Assignee :</b> &nbsp; {{lab.assignee}}</li>
+                      <li *ngIf="profile==='HOD'"><b>Assigned To :</b> &nbsp; {{lab.userId}}</li>
+                        <li ><b>Year : </b> &nbsp; {{lab.year}} &nbsp;&nbsp; <b> Section : </b>&nbsp;{{lab.section}}</li>
+                      </ul>
+                </ng-template>
+            </div>
+        </mat-card-content>
+      <mat-card-actions>
+        <button mat-button *ngIf="profile==='Student' ||  profile==='Teacher'" (click)="redirectQuestionListPage()">GO</button>
+        <button mat-button *ngIf="profile==='HOD'">EDIT</button>
+      </mat-card-actions>
+    </mat-card>

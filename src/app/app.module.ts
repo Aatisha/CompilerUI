@@ -12,11 +12,14 @@ import { SignupDialogComponent } from './components/signup-dialog/signup-dialog.
 import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { CreateLabComponent } from './components/create-lab/create-lab.component';
+import { QuestionListComponent } from './components/question-list/question-list.component';
+import { QuestionListPageComponent } from './pages/question-list-page/question-list-page.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,HomeComponent, LoginComponent, SignupDialogComponent, DashboardCardComponent, DashboardComponent, NavbarComponent
+    AppComponent,HomeComponent, LoginComponent, SignupDialogComponent, DashboardCardComponent, DashboardComponent, NavbarComponent, CreateLabComponent, QuestionListComponent, QuestionListPageComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     BrowserAnimationsModule, MaterialModule,HttpClientModule,FormsModule
   ],
   entryComponents: [
-    SignupDialogComponent
+    SignupDialogComponent,CreateLabComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
