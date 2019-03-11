@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="margin-bottom-x"><span>Your code here</span></div>
+             <div class="code-editor" #codeEditor></div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+             <div class="margin-bottom-x"><span>Input</span></div>
+              <textarea class="form-control output w-100" rows="7" aria-label="Input-textarea"></textarea>
+              </div>
+                <div class="col-md-12">
+              <div class="margin-bottom-x"><span >Output</span></div>
+              <textarea class="form-control output w-100" rows="7" disabled="true" aria-label="Output-textarea"></textarea>
+              </div>
+                <div class="col-md-12">
+                  <div class="margin-bottom-x"><span >Themes</span></div>
+                  <fieldset class="fieldset">            
+                  <div class="r-group">
+                    <input type="radio" id="r1" name="theme-radio" [(ngModel)]="theme" (change)="changeTheme(theme)" [checked]="true" value="eclipse">
+                    <label for="r1">Eclipse</label>
+                
+                    <input type="radio" id="r2" name="theme-radio" [(ngModel)]="theme" (change)="changeTheme(theme)" value="github">
+                
+                    <label for="r2">GitHub</label>
+                    <input type="radio" id="r3" name="theme-radio" [(ngModel)]="theme" (change)="changeTheme(theme)" value="tomorrow_night_blue">
+                    <label for="r3">Night Blue</label>
+                    <input type="radio" id="r4" name="theme-radio" [(ngModel)]="theme" (change)="changeTheme(theme)" value="twilight">
+                    <label for="r4">Twilight</label>
+                    <input type="radio" id="r5" name="theme-radio" [(ngModel)]="theme" (change)="changeTheme(theme)" value="vibrant_ink">
+                    <label for="r5">Vibrant</label>
+                    <input type="radio" id="r6" name="theme-radio" [(ngModel)]="theme" (change)="changeTheme(theme)" value="gob">
+                    <label for="r6">Green Black</label>
+                  </div>
+                </fieldset>
+              </div>
+              </div>
+          </div>
+    </div>

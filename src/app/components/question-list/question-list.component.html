@@ -4,6 +4,29 @@
         <p class="fix-2-line">{{question.question}}</p>
     </div>
     <div class="col-2">
-        Hie
+        <div class="row">
+            <div class="col margin-bottom-x" *ngIf="profile==='Teacher'">
+                    <button  mat-flat-button class="pull-right w-90 edit-button"  (click)="consoleCode()"><i class="material-icons">
+                            edit
+                            </i>&nbsp;Edit</button>
+            </div>
+            <div class="col margin-bottom-x" *ngIf="profile==='Teacher' || profile==='HOD'">
+                    <button  mat-flat-button class="pull-right w-90 view-button"   (click)="goToQuestion()">
+                            <i class="material-icons">
+                                    remove_red_eye
+                                    </i>&nbsp;View</button>
+            </div>
+
+            <div class="col margin-bottom-x" *ngIf="profile==='Student'">
+                    <button  mat-flat-button class="pull-right w-90 view-button top-111"  (click)="goToQuestion()">
+                            &lt;/&gt;&nbsp;Solve</button>
+            </div>
+
+            <div *ngIf="profile==='Teacher' || profile==='HOD'" class="col margin-bottom-x">
+                    <button mat-flat-button class="pull-right w-90 response-button"  (click)="consoleCode()"><i class="material-icons">
+                            insert_chart
+                            </i>&nbsp;Responses</button>
+            </div>
+        </div>
     </div>
 </div>

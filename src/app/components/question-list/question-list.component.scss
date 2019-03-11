@@ -2,7 +2,7 @@
 {
     background-color: #FFF;
     padding: 2%;
-    height: 130px;
+    height: 165px;
 }
 .fix-2-line
 {   
@@ -15,4 +15,35 @@
   overflow: hidden;
   text-overflow: ellipsis;
 
+}
+.pull-right
+{
+    float: right;
+}
+
+.w-90
+{
+    width: 90%;
+}
+
+.edit-button
+{
+    background-color: #F9AA43;
+    color: #FFF;
+}
+
+.view-button
+{
+    background-color: #00b0ff;
+    color: #FFF;
+}
+.response-button
+{
+    background-color: #2e7d32;
+    color: #FFF;
+}
+
+.top-111
+{
+    top:111%;
 }

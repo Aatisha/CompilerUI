@@ -5,7 +5,7 @@
             <h2>List of questions</h2>
         </div>
         <div  *ngIf="user.profile==='Teacher'" class="col-2">
-          <button mat-flat-button style="float: right;" color="primary" (click)="openDialog()"> <i class="material-icons">
+          <button mat-flat-button style="float: right;" color="primary" (click)="goToCreate()"> <i class="material-icons">
               create_new_folder
               </i> CREATE</button>
         </div>
@@ -14,6 +14,6 @@
     <div *ngFor="let question of questions"  class="col-12 margin-top-x">
       <app-question-list [question]="question" [profile]="user.profile"></app-question-list>
     </div>
+    <div class="no-question" *ngIf="questions.length===0">No Questions Available Yet. <span [innerHTML]="emoji"></span></div>
   </div>
-  
 </div>

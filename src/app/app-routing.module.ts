@@ -1,14 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HomeComponent } from './components/home/home.component';
 import { QuestionListPageComponent } from './pages/question-list-page/question-list-page.component';
+import { CreateQuestionComponent } from './components/create-question/create-question.component';
+import { CodingPageComponent } from './pages/coding-page/coding-page.component';
+import { QuestionPageComponent } from './pages/question-page/question-page.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'dashboard',component:DashboardComponent},
-  {path:'questionlist/:labId',component:QuestionListPageComponent}
+  {path:'questionlist/:labId',component:QuestionListPageComponent},
+  {path:'create/:labId',component:CreateQuestionComponent},
+  {path:'coding',component:CodingPageComponent},
+  {path:'question',component:QuestionPageComponent}
+
 ];
 
 @NgModule({

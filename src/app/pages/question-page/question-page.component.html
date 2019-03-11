@@ -1,0 +1,21 @@
+<app-navbar [username]="user.name"></app-navbar>
+<div class="container margin-top-x">
+    <mat-tab-group >
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <!-- <mat-icon class="example-tab-icon">thumb_up</mat-icon> -->
+            <span class="tab-icon">?</span>
+            Question
+          </ng-template>
+          <app-question-tab [question]="question" ></app-question-tab>
+        </mat-tab>
+      
+        <mat-tab *ngIf="user.profile==='Student'"> 
+          <ng-template mat-tab-label>
+            <span class="tab-icon">&lt;/&gt;</span>
+            Code
+          </ng-template>
+          <app-coding-page></app-coding-page>
+        </mat-tab>
+      </mat-tab-group>
+</div>

@@ -38,7 +38,7 @@
             </div>
         </mat-card-content>
       <mat-card-actions>
-        <button mat-button *ngIf="profile==='Student' ||  profile==='Teacher'" (click)="redirectQuestionListPage()">GO</button>
+        <button mat-button  (click)="redirectQuestionListPage()">GO</button>
         <button mat-button *ngIf="profile==='HOD'">EDIT</button>
       </mat-card-actions>
     </mat-card>

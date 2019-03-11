@@ -5,7 +5,7 @@ export class Question{
     questionHead:string;
     question:string;
     programmingLang:string;
-    sampleCase:Cases[];
-    testCase:Cases[];
+    sampleCase:string;
+    testCase:string;
     labId:string;
 }

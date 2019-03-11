@@ -15,11 +15,16 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { CreateLabComponent } from './components/create-lab/create-lab.component';
 import { QuestionListComponent } from './components/question-list/question-list.component';
 import { QuestionListPageComponent } from './pages/question-list-page/question-list-page.component';
+import { CreateQuestionComponent } from './components/create-question/create-question.component';
+import { CodeEditorComponent } from './components/code-editor/code-editor.component';
+import { CodingPageComponent } from './pages/coding-page/coding-page.component';
+import { QuestionPageComponent } from './pages/question-page/question-page.component';
+import { QuestionTabComponent } from './components/question-tab/question-tab.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,HomeComponent, LoginComponent, SignupDialogComponent, DashboardCardComponent, DashboardComponent, NavbarComponent, CreateLabComponent, QuestionListComponent, QuestionListPageComponent
+    AppComponent,HomeComponent, LoginComponent, SignupDialogComponent, DashboardCardComponent, DashboardComponent, NavbarComponent, CreateLabComponent, QuestionListComponent, QuestionListPageComponent, CreateQuestionComponent, CodeEditorComponent, CodingPageComponent, QuestionPageComponent, QuestionTabComponent
   ],
   imports: [
     BrowserModule,

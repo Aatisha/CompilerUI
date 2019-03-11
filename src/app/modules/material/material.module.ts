@@ -11,17 +11,18 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
     MatSidenavModule,MatButtonModule,MatIconModule,MatFormFieldModule,MatInputModule,MatDialogModule,MatCardModule,MatToolbarModule,MatSelectModule,
-    MatRadioModule,MatSnackBarModule
+    MatRadioModule,MatSnackBarModule,MatTabsModule,MatBottomSheetModule
   ],
   exports: [
     MatSidenavModule,MatButtonModule,MatIconModule,MatFormFieldModule, MatInputModule,MatDialogModule,MatCardModule,MatToolbarModule,MatSelectModule,
-    MatRadioModule,MatSnackBarModule
+    MatRadioModule,MatSnackBarModule,MatTabsModule,MatBottomSheetModule
   ]
 })
 export class MaterialModule { }

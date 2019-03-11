@@ -1,0 +1,91 @@
+<div class="container pad-x"> 
+  <div class="row">
+    <div class="col-sm-6"></div>
+    <div class="col-sm-6 pad-s-x">
+      <h2>Create Question</h2>
+      <form  #createForm="ngForm">
+        <p>
+          <mat-form-field  appearance="outline" class="w-100">
+              <mat-label>Question Heading</mat-label>
+              <input matInput placeholder="Enter question heading" name="heading" id="heading" [(ngModel)]="question.questionHead" required>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field  appearance="outline" class="w-100">
+              <mat-label>Question</mat-label>
+              <textarea matInput placeholder="Enter question" name="question" id="question" [(ngModel)]="question.question" required></textarea>
+          </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="outline" class="w-100" >
+                <mat-label>Programming Language</mat-label>
+                <mat-select placeholder="Select Year" [(ngModel)]="question.programmingLang" name="year" required>
+                  <mat-option *ngFor="let lang of languages" [value]="lang">
+                    {{lang}}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </p>
+
+          <h4>Sample Cases</h4>
+          
+          <div *ngFor="let sample of sampleCases; let i = index">
+            <div class="row">
+              <div class="col-5">
+                  <mat-form-field appearance="outline">
+                      <mat-label>Input</mat-label>
+                      <input matInput placeholder="Input" name="sampleInput{{i}}" id="sampleInput{{i}}" [(ngModel)]="sample.input">
+                  </mat-form-field>
+              </div>
+              <div class="col-5">
+                  <mat-form-field appearance="outline">
+                      <mat-label>Output</mat-label>
+                      <input matInput placeholder="Output" name="sampleOutput{{i}}" id="sampleOutput{{i}}" [(ngModel)]="sample.output">
+                  </mat-form-field>
+              </div>
+              <div class="col-2">
+                  <button mat-icon-button  (click)=deleteSample(i)>
+                      <mat-icon class="del-button">delete</mat-icon>
+                  </button>
+              </div>
+              
+            </div>
+          </div>
+          <button mat-button  (click)=addSample()>
+             + Add
+          </button>
+          <br><br>
+          <h4>Test Cases</h4>
+          
+          <div *ngFor="let test of testCases; let i = index">
+            <div class="row">
+              <div class="col-5">
+                  <mat-form-field appearance="outline">
+                      <mat-label>Input</mat-label>
+                      <input matInput placeholder="Input" name="testInput{{i}}" id="testInput{{i}}" [(ngModel)]="test.input">
+                  </mat-form-field>
+              </div>
+              <div class="col-5">
+                  <mat-form-field appearance="outline">
+                      <mat-label>Output</mat-label>
+                      <input matInput placeholder="Output" name="testOutput{{i}}" id="testOutput{{i}}" [(ngModel)]="test.output">
+                  </mat-form-field>
+              </div>
+              <div class="col-2">
+                  <button mat-icon-button (click)=deleteTest(i)>
+                      <mat-icon class="del-button">delete</mat-icon>
+                  </button>
+              </div>
+              
+            </div>
+          </div>
+          <button mat-button   (click)=addTest()>
+              + Add
+          </button>
+          <br><br>
+          <button type="submit" [disabled]="!createForm.form.valid" mat-flat-button color="primary" class="w-100" (click)="onSubmit()">Submit</button>
+         
+      </form>
+    </div>
+  </div>
+</div>

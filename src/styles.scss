@@ -8,7 +8,6 @@
 //@import "reset";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
  
-
 *{
     padding: 0;
     margin: 0;
@@ -24,3 +23,15 @@ html, body {
     height: 100%;
 }
 
+.margin-top-x
+{
+    margin-top: 40px;
+}
+.margin-bottom-x
+{
+    margin-bottom: 5px;
+}
+
+.cq-bottomsheet {
+    width: 1140px;
+}
