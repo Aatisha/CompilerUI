@@ -16,6 +16,7 @@ const httpOptions = {
 })
 export class CreateQuestionService {
   createUrl='labs/question/add';
+  updateUrl='labs/question/update';
   constructor(private http: HttpClient,private snackBar: MatSnackBar,private zone: NgZone,private variable:VariableService) { }
 
   //ERROR HANDLING METHOD
@@ -42,5 +43,12 @@ export class CreateQuestionService {
   {
     console.log('service called');
     return this.http.post<CommonResponses>(this.variable.apiUrl+this.createUrl,request,httpOptions).pipe(catchError(this.handleError.bind(this)));
+  }
+
+  updateQuestion(request:Question):Observable<CommonResponses>
+  {
+    console.log('service called');
+    debugger
+    return this.http.put<CommonResponses>(this.variable.apiUrl+this.updateUrl,request,httpOptions).pipe(catchError(this.handleError.bind(this)));
   }
 }

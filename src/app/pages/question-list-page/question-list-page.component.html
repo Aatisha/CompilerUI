@@ -12,7 +12,7 @@
       </div>
   <div class="row">
     <div *ngFor="let question of questions"  class="col-12 margin-top-x">
-      <app-question-list [question]="question" [profile]="user.profile"></app-question-list>
+      <app-question-list [question]="question" [profile]="user.profile" [labId]="labId"></app-question-list>
     </div>
     <div class="no-question" *ngIf="questions.length===0">No Questions Available Yet. <span [innerHTML]="emoji"></span></div>
   </div>

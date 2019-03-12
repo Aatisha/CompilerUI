@@ -32,7 +32,7 @@ export class QuestionListPageComponent implements OnInit {
   goToCreate() {
     this.bottomSheet.open(CreateQuestionComponent, {
       panelClass: 'cq-bottomsheet',
-      data: { labId: this.labId }
+      data: { labId: this.labId,question:null }
     }
       );
   }
