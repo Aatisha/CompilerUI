@@ -6,6 +6,7 @@ import { QuestionListPageComponent } from './pages/question-list-page/question-l
 import { CreateQuestionComponent } from './components/create-question/create-question.component';
 import { CodingPageComponent } from './pages/coding-page/coding-page.component';
 import { QuestionPageComponent } from './pages/question-page/question-page.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path:'questionlist/:labId',component:QuestionListPageComponent},
   {path:'create/:labId',component:CreateQuestionComponent},
   {path:'coding',component:CodingPageComponent},
-  {path:'question',component:QuestionPageComponent}
+  {path:'question',component:QuestionPageComponent},
+  {path:'chat',component:ChatComponent}
 
 ];
 

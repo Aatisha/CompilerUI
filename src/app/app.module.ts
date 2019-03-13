@@ -20,11 +20,12 @@ import { CodeEditorComponent } from './components/code-editor/code-editor.compon
 import { CodingPageComponent } from './pages/coding-page/coding-page.component';
 import { QuestionPageComponent } from './pages/question-page/question-page.component';
 import { QuestionTabComponent } from './components/question-tab/question-tab.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,HomeComponent, LoginComponent, SignupDialogComponent, DashboardCardComponent, DashboardComponent, NavbarComponent, CreateLabComponent, QuestionListComponent, QuestionListPageComponent, CreateQuestionComponent, CodeEditorComponent, CodingPageComponent, QuestionPageComponent, QuestionTabComponent
+    AppComponent,HomeComponent, LoginComponent, SignupDialogComponent, DashboardCardComponent, DashboardComponent, NavbarComponent, CreateLabComponent, QuestionListComponent, QuestionListPageComponent, CreateQuestionComponent, CodeEditorComponent, CodingPageComponent, QuestionPageComponent, QuestionTabComponent, ChatComponent
   ],
   imports: [
     BrowserModule,
