@@ -4,22 +4,22 @@
     <div class="toolbar-button">
     <div class="row ">
         <div class="col-md-2 center margin-bottom-x">
-            <button mat-flat-button  class="fix-width save-button" (click)="consoleCode()"><i class="material-icons">
+            <button mat-flat-button  class="fix-width save-button" (click)="saveCode()"><i class="material-icons">
               save
               </i>&nbsp;Save</button>
         </div>
         <div class="col-md-2 center margin-bottom-x">
-            <button mat-flat-button  class="fix-width compile-button" (click)="consoleCode()"><i class="material-icons">
+            <button mat-flat-button  class="fix-width compile-button" (click)="compileCode()"><i class="material-icons">
               code
               </i>&nbsp;Compile</button>
         </div>
         <div class="col-md-2 center margin-bottom-x">
-            <button mat-flat-button color="primary" class="fix-width" (click)="consoleCode()"><i class="material-icons">
+            <button mat-flat-button color="primary" class="fix-width" (click)="runCode()"><i class="material-icons">
               offline_bolt
               </i>&nbsp;Run</button>
         </div>
         <div class="col-md-2 center margin-bottom-x">
-            <button mat-flat-button  class="fix-width submit-button" (click)="consoleCode()"><i class="material-icons">
+            <button mat-flat-button  class="fix-width submit-button" (click)="submitCode()"><i class="material-icons">
               send
               </i>&nbsp;Submit</button>
         </div>
@@ -38,7 +38,7 @@
   
   <!-- the code editor -->
   <div class="coding-area">
-    <app-code-editor></app-code-editor>
+    <app-code-editor [lang]="lang"></app-code-editor>
   </div>
 
 

@@ -11,12 +11,14 @@ import { LoginRes } from 'src/app/models/loginRes';
 export class QuestionPageComponent implements OnInit {
 
   question : Question;
+  labId:string;
   user: LoginRes= new LoginRes();
   constructor(private questionService : QuestionService) { }
 
   ngOnInit() {
     this.user = JSON.parse(localStorage.getItem('login-data'));
     this.question = this.questionService.question;
+    this.labId = this.questionService.labId;
   }
 
 }

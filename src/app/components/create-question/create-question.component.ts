@@ -15,7 +15,8 @@ export class CreateQuestionComponent implements OnInit {
 
  
   question: Question = new Question();
-  languages = ['C', 'C++', 'Java'];
+  languages = ['C', 'C++', 'Java','Python'];
+  languagesCode = ['c', 'cpp', 'java','python3'];
   sampleCases : Cases[] = [];
   testCases : Cases[] = [];
   constructor(private bottomSheetRef: MatBottomSheetRef<CreateQuestionComponent>,@Inject(MAT_BOTTOM_SHEET_DATA) public data: any,private service:CreateQuestionService,private snackBar: MatSnackBar,private qservice:QuestionService) { 
@@ -61,7 +62,7 @@ export class CreateQuestionComponent implements OnInit {
     this.question.testCase = JSON.stringify(JSON.stringify(this.testCases));
     this.question.testCase = this.question.testCase.substring(1,this.question.testCase.length-1)
     console.log(this.question.testCase);
-
+    debugger
      console.log(this.question.questionHead + " " + this.question.question + " "+ this.question.programmingLang + " "+this.question.labId)
     this.service.createQuestion(this.question).subscribe(response=>{ 
       console.log('Response-'+response.responseMessage);

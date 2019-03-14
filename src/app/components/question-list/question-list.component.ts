@@ -15,14 +15,24 @@ export class QuestionListComponent implements OnInit {
   @Input() question: Question;
   @Input() profile: string;
   @Input() labId: string;
-
+  languages = ['C', 'C++', 'Java','Python'];
+  lang:string;
   constructor(private questionService:QuestionService,private router :Router,private bottomSheet: MatBottomSheet) { }
 
   ngOnInit() {
+    if(this.question.programmingLang ==='python3')
+      this.lang=this.languages[3];
+     else if(this.question.programmingLang ==='c')
+      this.lang=this.languages[0];
+     else if(this.question.programmingLang ==='cpp')
+      this.lang=this.languages[1];
+     else
+      this.lang=this.languages[2];
   }
   
   goToQuestion() {
     this.questionService.question = this.question;
+    this.questionService.labId = this.labId;
     this.router.navigate(['/question']);
   }
 

@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {ChatService} from '../../services/dialogflow/chat.service';
+import {Message} from '../../models/message';
+import { Observable } from 'rxjs';
+import { scan } from 'rxjs/internal/operators';
+
 
 @Component({
   selector: 'app-chat',
@@ -9,9 +14,24 @@ export class ChatComponent implements OnInit {
 
   chatToggle:boolean = false;
   chatFab:boolean = true;
-  constructor() { }
+
+  messages: Observable<Message[]>;
+  formValue: string;
+
+  constructor(public chat: ChatService) { }
 
   ngOnInit() {
+    // appends to array after each new message is added to feedSource
+    this.messages = this.chat.conversation.asObservable()
+    .pipe(
+      scan((acc, val) => acc.concat(val))
+    )
+
+  }
+
+  sendMessage() {
+    this.chat.converse(this.formValue);
+    this.formValue = '';
   }
 
   toggleWindow()

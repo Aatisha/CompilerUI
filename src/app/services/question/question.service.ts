@@ -6,5 +6,6 @@ import { Question } from 'src/app/models/question';
 })
 export class QuestionService {
   public question : Question;
+  public labId:string;
   constructor() { }
 }

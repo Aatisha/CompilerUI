@@ -7,11 +7,11 @@
             <div class="row">
                 <div class="col-md-12">
              <div class="margin-bottom-x"><span>Input</span></div>
-              <textarea class="form-control output w-100" rows="7" aria-label="Input-textarea"></textarea>
+              <textarea [(ngModel)]="input" name="input" class="form-control output w-100" rows="7" aria-label="Input-textarea"></textarea>
               </div>
                 <div class="col-md-12">
               <div class="margin-bottom-x"><span >Output</span></div>
-              <textarea class="form-control output w-100" rows="7" disabled="true" aria-label="Output-textarea"></textarea>
+              <textarea  [(ngModel)]="output" name="output" class="form-control output w-100" rows="7" disabled="true" aria-label="Output-textarea"></textarea>
               </div>
                 <div class="col-md-12">
                   <div class="margin-bottom-x"><span >Themes</span></div>

@@ -22,7 +22,7 @@
             <mat-form-field appearance="outline" class="w-100" >
                 <mat-label>Programming Language</mat-label>
                 <mat-select placeholder="Select Year" [(ngModel)]="question.programmingLang" name="year" required>
-                  <mat-option *ngFor="let lang of languages" [value]="lang">
+                  <mat-option *ngFor="let lang of languages; let i =index" [value]="languagesCode[i]">
                     {{lang}}
                   </mat-option>
                 </mat-select>

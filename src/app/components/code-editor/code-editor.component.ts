@@ -5,6 +5,8 @@ import * as ace from 'ace-builds';
 import 'ace-builds/src-noconflict/mode-javascript';
 import 'ace-builds/src-noconflict/ace';
 import 'ace-builds/src-noconflict/mode-java';
+import 'ace-builds/src-noconflict/mode-c_cpp';
+import 'ace-builds/src-noconflict/mode-python';
 import 'ace-builds/src-noconflict/theme-eclipse';
 import 'ace-builds/src-noconflict/theme-github';
 import 'ace-builds/src-noconflict/theme-vibrant_ink';
@@ -16,7 +18,6 @@ import 'ace-builds/src-noconflict/ext-beautify';
 
 
 const INIT_CONTENT = '';
-const LANG = 'ace/mode/javascript';
 const baseTheme= 'ace/theme/';
 
 
@@ -32,10 +33,28 @@ const baseTheme= 'ace/theme/';
     theme = 'eclipse';
     @ViewChild('codeEditor') private codeEditorElmRef: ElementRef;
     @Input() content: string;
+    @Input() lang:string;
+    input:string;
+    output:string;
+    LANG = 'ace/mode/';
 
     constructor() { }
 
     ngOnInit() {
+        if(this.lang === 'c' || this.lang ==='cpp'){
+            this.LANG +='c_cpp'; 
+            debugger
+        }
+        else if(this.lang === 'python3')
+        {
+            this.LANG+='python';
+            debugger
+        }
+        else{
+            this.LANG +='java'; 
+            debugger
+        }
+
         ace.require('ace/ext/language_tools');
         const element = this.codeEditorElmRef.nativeElement;
         const editorOptions = this.getEditorOptions();
@@ -49,7 +68,7 @@ const baseTheme= 'ace/theme/';
     private createCodeEditor(element: Element, options: any): ace.Ace.Editor {
         const editor = ace.edit(element, options);
         editor.setTheme('ace/theme/eclipse');
-        editor.getSession().setMode(LANG);
+        editor.getSession().setMode(this.LANG);
         editor.setShowFoldWidgets(true);
        editor.renderer.setScrollMargin(10, 10,10,10);
         return editor;
@@ -77,7 +96,7 @@ const baseTheme= 'ace/theme/';
      */
     public getContent() {
         if (this.codeEditor) {
-            const code = this.codeEditor.getValue();
+            const code = JSON.stringify(this.codeEditor.getValue());
             return code;
         }
     }
@@ -91,6 +110,25 @@ const baseTheme= 'ace/theme/';
         }
     }
 
+    /**
+     * @returns - the current editor's input.
+     */
+    public getInput() {
+        if (this.codeEditor) {
+            const input = this.input
+            return input;
+        }
+    }
+    /**
+     * @returns - the current editor's input.
+     */
+    public setOutput(output:string):void {
+        if (this.codeEditor) {
+            this.output = output;
+        }
+    }
+
+    
     /**
      * @description
      *  beautify the editor content, rely on Ace Beautify extension.

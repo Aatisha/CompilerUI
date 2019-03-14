@@ -25,7 +25,12 @@ import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [
-    AppComponent,HomeComponent, LoginComponent, SignupDialogComponent, DashboardCardComponent, DashboardComponent, NavbarComponent, CreateLabComponent, QuestionListComponent, QuestionListPageComponent, CreateQuestionComponent, CodeEditorComponent, CodingPageComponent, QuestionPageComponent, QuestionTabComponent, ChatComponent
+    AppComponent,HomeComponent, LoginComponent,
+    SignupDialogComponent, DashboardCardComponent, 
+    DashboardComponent, NavbarComponent, CreateLabComponent,
+     QuestionListComponent, QuestionListPageComponent, 
+     CreateQuestionComponent, CodeEditorComponent, CodingPageComponent,
+      QuestionPageComponent, QuestionTabComponent, ChatComponent
   ],
   imports: [
     BrowserModule,
