@@ -68,7 +68,7 @@ export class CodingPageComponent implements OnInit {
   {
     this.solution.solution_file = this.codeEditor.getContent().substring(1,this.codeEditor.getContent().length-1);
     this.solution.questionId = this.questionId;
-    this.solution.input = this.codeEditor.getInput();
+    this.solution.input = this.codeEditor.getInput().substring(1,this.codeEditor.getInput().length-1);
     debugger
     this.service.runSolution(this.solution).subscribe(response=>{ 
       this.codeEditor.setOutput(response.output)

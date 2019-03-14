@@ -115,7 +115,7 @@ const baseTheme= 'ace/theme/';
      */
     public getInput() {
         if (this.codeEditor) {
-            const input = this.input
+            const input = JSON.stringify(this.input);
             return input;
         }
     }

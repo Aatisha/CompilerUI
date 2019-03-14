@@ -29,7 +29,7 @@
               </i>&nbsp;Status</button>
         </div>
         <div class="col-md-2 center margin-bottom-x">
-            <button mat-flat-button color="accent" class="fix-width" (click)="beautifyContent()"><i class="material-icons">
+            <button mat-flat-button color="accent" *ngIf="lang!=='python3'" class="fix-width" (click)="beautifyContent()"><i class="material-icons">
               local_florist
               </i>&nbsp;Beautify</button>
         </div>

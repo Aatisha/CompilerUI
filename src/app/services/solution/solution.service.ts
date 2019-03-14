@@ -29,7 +29,7 @@ export class SolutionService {
       console.log("Client Side Error: ", errorResponse.error.message);
     } else {
       console.log("Server Side Error: ", errorResponse);
-      this.openSnackbar("Problem creating question");
+      this.openSnackbar("Error Occured.");
     }
     return throwError("There is an issue with the call.");
   }
