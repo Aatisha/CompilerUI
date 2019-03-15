@@ -1,4 +1,4 @@
-<div class="container margin-top-x">
+<div class="container margin-top-x overflow-h">
     <!-- run, clear & beautify buttons -->
     <!-- <h2>Coding Arena</h2> -->
     <div class="toolbar-button">
@@ -24,7 +24,7 @@
               </i>&nbsp;Submit</button>
         </div>
         <div class="col-md-2 center margin-bottom-x">
-            <button mat-flat-button  class="fix-width status-button" (click)="consoleCode()"><i class="material-icons">
+            <button mat-flat-button  class="fix-width status-button" (click)="statusCode()"><i class="material-icons">
               check_circle
               </i>&nbsp;Status</button>
         </div>
@@ -35,6 +35,7 @@
         </div>
       </div>
     </div>
+    <mat-progress-bar *ngIf="progressBar" mode="indeterminate"></mat-progress-bar>
   
   <!-- the code editor -->
   <div class="coding-area">

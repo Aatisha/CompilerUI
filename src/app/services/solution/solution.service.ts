@@ -15,8 +15,6 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class SolutionService {
-  createUrl='labs/question/add';
-  updateUrl='labs/question/update';
   saveURL = 'solution/save';
   executeURL = 'solution/execute';
   submitURL = 'solution/submit';
@@ -59,10 +57,10 @@ export class SolutionService {
     debugger
     return this.http.post<Solution>(this.variable.apiUrl+this.executeURL,request,httpOptions).pipe(catchError(this.handleError.bind(this)));
   }
-  submitSolution(request:Solution):Observable<CommonResponses>
+  submitSolution(request:Solution):Observable<Solution>
   {
     console.log('service called');
-    return this.http.post<CommonResponses>(this.variable.apiUrl+this.submitURL,request,httpOptions).pipe(catchError(this.handleError.bind(this)));
+    return this.http.post<Solution>(this.variable.apiUrl+this.submitURL,request,httpOptions).pipe(catchError(this.handleError.bind(this)));
   }
 
 

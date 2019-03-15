@@ -7,4 +7,5 @@ export class Solution{
     input:string;
     output:string;
     statusCode:number;
+    responseMessage:string;
 }

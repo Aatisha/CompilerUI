@@ -34,7 +34,7 @@ const baseTheme= 'ace/theme/';
     @ViewChild('codeEditor') private codeEditorElmRef: ElementRef;
     @Input() content: string;
     @Input() lang:string;
-    input:string;
+    input:string =" ";
     output:string;
     LANG = 'ace/mode/';
 

@@ -13,16 +13,17 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
     MatSidenavModule,MatButtonModule,MatIconModule,MatFormFieldModule,MatInputModule,MatDialogModule,MatCardModule,MatToolbarModule,MatSelectModule,
-    MatRadioModule,MatSnackBarModule,MatTabsModule,MatBottomSheetModule
+    MatRadioModule,MatSnackBarModule,MatTabsModule,MatBottomSheetModule,MatProgressBarModule
   ],
   exports: [
     MatSidenavModule,MatButtonModule,MatIconModule,MatFormFieldModule, MatInputModule,MatDialogModule,MatCardModule,MatToolbarModule,MatSelectModule,
-    MatRadioModule,MatSnackBarModule,MatTabsModule,MatBottomSheetModule
+    MatRadioModule,MatSnackBarModule,MatTabsModule,MatBottomSheetModule,MatProgressBarModule
   ]
 })
 export class MaterialModule { }

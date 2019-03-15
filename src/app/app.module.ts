@@ -21,6 +21,7 @@ import { CodingPageComponent } from './pages/coding-page/coding-page.component';
 import { QuestionPageComponent } from './pages/question-page/question-page.component';
 import { QuestionTabComponent } from './components/question-tab/question-tab.component';
 import { ChatComponent } from './components/chat/chat.component';
+import { ResultProgressComponent } from './components/result-progress/result-progress.component';
 
 
 @NgModule({
@@ -30,7 +31,7 @@ import { ChatComponent } from './components/chat/chat.component';
     DashboardComponent, NavbarComponent, CreateLabComponent,
      QuestionListComponent, QuestionListPageComponent, 
      CreateQuestionComponent, CodeEditorComponent, CodingPageComponent,
-      QuestionPageComponent, QuestionTabComponent, ChatComponent
+      QuestionPageComponent, QuestionTabComponent, ChatComponent, ResultProgressComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +39,7 @@ import { ChatComponent } from './components/chat/chat.component';
     BrowserAnimationsModule, MaterialModule,HttpClientModule,FormsModule
   ],
   entryComponents: [
-    SignupDialogComponent,CreateLabComponent
+    SignupDialogComponent,CreateLabComponent, ResultProgressComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

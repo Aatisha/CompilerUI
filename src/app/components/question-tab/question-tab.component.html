@@ -1,12 +1,15 @@
 <div class="container margin-top-x">
   <h2>{{question.questionHead}}</h2>
   <p>{{question.question}}</p>
+  <div >
   <h4 >Sample Test Case</h4>
+
   <div *ngFor="let case of cases">
   <div>Input</div>
   <div>{{case.input}}</div>
   <div>Output</div>
   <div>{{case.output}}</div>
+  </div>
   </div>
 
 
