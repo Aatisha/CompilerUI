@@ -15,15 +15,15 @@ import { ResultProgressComponent } from 'src/app/components/result-progress/resu
 export class CodingPageComponent implements OnInit {
 
   // solution:Solution;
-  @ViewChild(CodeEditorComponent) codeEditor: CodeEditorComponent; // editor component instance
+  @ViewChild(CodeEditorComponent, { static: true }) codeEditor: CodeEditorComponent; // editor component instance
   @Input() labId:string;
   @Input() questionId:string;
   @Input() lang:string;
   solution:Solution = new Solution();
   progressBar = false;
   user : LoginRes= new LoginRes();
-  @ViewChild(CodeEditorComponent) input :string;
-  @ViewChild(CodeEditorComponent) output:string;
+  @ViewChild(CodeEditorComponent, { static: true }) input :string;
+  @ViewChild(CodeEditorComponent, { static: true }) output:string;
   result:string;
   constructor(private service : SolutionService,private snackBar: MatSnackBar,private bottomSheet: MatBottomSheet) { }
 

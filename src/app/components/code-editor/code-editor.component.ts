@@ -31,7 +31,7 @@ const baseTheme= 'ace/theme/';
     private codeEditor: ace.Ace.Editor;
     private editorBeautify; // beautify extension
     theme = 'eclipse';
-    @ViewChild('codeEditor') private codeEditorElmRef: ElementRef;
+    @ViewChild('codeEditor', { static: true }) private codeEditorElmRef: ElementRef;
     @Input() content: string;
     @Input() lang:string;
     input:string =" ";
