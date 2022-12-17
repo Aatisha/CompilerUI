@@ -12,7 +12,7 @@ export class GetQuestionByLabIdService {
   constructor(private http: HttpClient,private variable:VariableService) { }
   getQuestionByLabId(labId:string):Observable<CommonResponses>
   {
-    console.log("labId inside service " + labId)
+    
     return this.http.get<CommonResponses>(this.variable.apiUrl+this.url+labId);
   }
 }

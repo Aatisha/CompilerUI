@@ -3,8 +3,8 @@ import { HttpHeaders,HttpErrorResponse, HttpClient } from '@angular/common/http'
 import { Lab } from 'src/app/models/lab';
 import { Observable,throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { MatSnackBar} from '@angular/material';
-import {VariableService} from '../variable.service';
+import { MatSnackBar} from '@angular/material/snack-bar';
+import { VariableService } from '../variable.service';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json'
@@ -20,9 +20,9 @@ export class AddLabService {
   ///////////////////////////////////////////////////////////////////////////
   private handleError(errorResponse: HttpErrorResponse) {
     if (errorResponse.error instanceof ErrorEvent) {
-      console.log("Client Side Error: ", errorResponse.error.message);
+      
     } else {
-      console.log("Server Side Error: ", errorResponse);
+      
       this.openSnackbar("Problem occured while adding the lab details. Try Again.");
     }
     return throwError("There is an issue with the call.");
@@ -37,7 +37,7 @@ export class AddLabService {
   }
   addLab(request:Lab):Observable<Lab>
   {
-    console.log('service called');
+    
     return this.http.post<Lab>(this.variable.apiUrl+this.addLabUrl,request,httpOptions).pipe(catchError(this.handleError.bind(this)));
   }
   

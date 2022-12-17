@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA } from '@angular/material';
+import { MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA } from '@angular/material/bottom-sheet';
 
 @Component({
   selector: 'app-result-progress',
@@ -10,7 +10,7 @@ export class ResultProgressComponent implements OnInit {
 
   result:string;
   constructor(private bottomSheetRef: MatBottomSheetRef<ResultProgressComponent>,@Inject(MAT_BOTTOM_SHEET_DATA) public data: any) {
-    debugger
+    
     this.result = data.result;
    }
 

@@ -18,9 +18,9 @@ export class QuestionTabComponent implements OnInit {
   ngOnInit() {
     var c = ("\""+this.question.sampleCase+"\"").toString();
    this.cases = JSON.parse(JSON.parse(c));
-   console.log("cases  "+this.cases.length );
+   
 
-console.log( Array.isArray(this.cases)) // true
+
   }
 
 }

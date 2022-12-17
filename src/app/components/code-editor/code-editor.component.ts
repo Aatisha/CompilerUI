@@ -43,16 +43,16 @@ const baseTheme= 'ace/theme/';
     ngOnInit() {
         if(this.lang === 'c' || this.lang ==='cpp'){
             this.LANG +='c_cpp'; 
-            debugger
+            
         }
         else if(this.lang === 'python3')
         {
             this.LANG+='python';
-            debugger
+            
         }
         else{
             this.LANG +='java'; 
-            debugger
+            
         }
 
         ace.require('ace/ext/language_tools');
@@ -75,7 +75,7 @@ const baseTheme= 'ace/theme/';
     }
 
     // setEditorTheme(value) {
-    //     console.log('set theme called in component',value);
+    //     
     //     this.codeEditor.setTheme(value);
     // }
 
@@ -151,7 +151,7 @@ const baseTheme= 'ace/theme/';
         });
     }
 
-    private changeTheme(value:string)
+    changeTheme(value:string)
     {
     
       this.codeEditor.setTheme(baseTheme+value);

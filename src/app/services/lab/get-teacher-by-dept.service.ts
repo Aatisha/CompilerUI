@@ -11,7 +11,7 @@ export class GetTeacherByDeptService {
   constructor(private http: HttpClient,private variable:VariableService) { }
   getTeacherByDept(dept:string):Observable<SignupReq[]>
   {
-    console.log("dept inside service " + dept)
+    
     return this.http.get<SignupReq[]>(this.variable.apiUrl+this.url+dept);
   }
 }

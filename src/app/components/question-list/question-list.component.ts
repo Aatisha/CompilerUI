@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Question } from 'src/app/models/question';
 import { QuestionService } from 'src/app/services/question/question.service';
 import { Router } from '@angular/router';
-import { MatBottomSheet } from '@angular/material';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { CreateQuestionComponent } from '../create-question/create-question.component';
 
 @Component({

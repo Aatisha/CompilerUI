@@ -2,7 +2,8 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { GetTeacherByDeptService } from 'src/app/services/lab/get-teacher-by-dept.service';
 import { SignupReq } from 'src/app/models/SignupReq';
 import { DashboardComponent } from 'src/app/pages/dashboard/dashboard.component';
-import { MatDialogRef,MAT_DIALOG_DATA, MatSnackBar} from '@angular/material';
+import { MatDialogRef ,MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatSnackBar} from '@angular/material/snack-bar';
 import { Lab } from 'src/app/models/lab';
 import { AddLabService } from 'src/app/services/lab/add-lab.service';
 @Component({
@@ -29,7 +30,7 @@ export class CreateLabComponent implements OnInit {
     this.dialogRef.close();
   }
   onSubmit(request:Lab){
-    console.log(request);
+    
     request.assignee = this.data.assignee;
     this.labService.addLab(request).subscribe(response=>{
       this.snackBar.open(response.responseMessage, 'Ok', {duration: 1500});

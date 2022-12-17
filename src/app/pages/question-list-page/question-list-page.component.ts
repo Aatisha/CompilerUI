@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { GetQuestionByLabIdService } from 'src/app/services/question/get-question-by-lab-id.service';
 import { Question } from 'src/app/models/question';
 import { CommonResponses } from 'src/app/models/commonResponse';
-import { MatBottomSheet } from '@angular/material';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { CreateQuestionComponent } from 'src/app/components/create-question/create-question.component';
 
 @Component({
@@ -24,7 +24,7 @@ export class QuestionListPageComponent implements OnInit {
   ngOnInit() {
     this.user = JSON.parse(localStorage.getItem('login-data'));
     this.questionService.getQuestionByLabId(this.labId).subscribe((response : CommonResponses)=>{ 
-      console.log('Response-');
+      
       this.questions = response.question;
     });
   }

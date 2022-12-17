@@ -36,7 +36,7 @@ export class ChatComponent implements OnInit {
 
   toggleWindow()
   {
-    console.log("hi")
+    
     if(this.chatToggle===false)
     {
         document.getElementById("chat-content").style.display = "block";

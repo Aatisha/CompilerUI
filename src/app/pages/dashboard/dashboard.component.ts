@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginRes } from 'src/app/models/loginRes';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { CreateLabComponent } from 'src/app/components/create-lab/create-lab.component';
 @Component({
   selector: 'app-dashboard',
@@ -14,11 +14,11 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.user = JSON.parse(localStorage.getItem('login-data'));
-    console.log(this.user.email);
+    
   }
 
   openDialog(): void {
-    console.log(this.user.dept)
+    
     const dialogRef = this.dialog.open(CreateLabComponent, {
       width: '700px',
       data: {

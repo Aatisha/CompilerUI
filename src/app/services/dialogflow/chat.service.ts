@@ -27,7 +27,7 @@ export class ChatService {
       
       const botMessage = new Message(speech, 'Bot');
       this.update(botMessage);
-      debugger
+      
                });
   }
 

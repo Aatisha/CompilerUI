@@ -6,7 +6,7 @@ import { Observable,throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { LoginReq } from '../models/LoginReq';
 import { LoginRes } from '../models/LoginRes';
-import { MatSnackBar} from '@angular/material';
+import { MatSnackBar} from '@angular/material/snack-bar';
 import {VariableService} from './variable.service';
 const httpOptions = {
   headers: new HttpHeaders({
@@ -28,9 +28,9 @@ export class RestApiService {
   ///////////////////////////////////////////////////////////////////////////
   private handleError(errorResponse: HttpErrorResponse) {
     if (errorResponse.error instanceof ErrorEvent) {
-      console.log("Client Side Error: ", errorResponse.error.message);
+      
     } else {
-      console.log("Server Side Error: ", errorResponse);
+      
       this.openSnackbar("Username or password incorrect.");
     }
     return throwError("There is an issue with the call.");
@@ -45,19 +45,19 @@ export class RestApiService {
   }
   signupStudent(request:SignupReq):Observable<SignupReq>
   {
-    console.log('service called');
+    
     return this.http.post<SignupReq>(this.variable.apiUrl+this.signupStudentUrl,request,httpOptions);
   }
 
   signupTeacher(request:SignupReq):Observable<SignupReq>
   {
-    console.log('service called');
+    
     return this.http.post<SignupReq>(this.variable.apiUrl+this.signupTeacherUrl,request,httpOptions);
   }
 
   login(request:LoginReq):Observable<LoginRes>
   {
-    console.log('service called');
+    
     return this.http.post<LoginRes>(this.variable.apiUrl+this.loginUrl,request,httpOptions).pipe(catchError(this.handleError.bind(this)));
   }
 }

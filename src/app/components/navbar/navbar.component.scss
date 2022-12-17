@@ -1,37 +1,43 @@
-  .navbar
-  {
-    background-color: rgba(255, 255, 255, 0.97)!important;
-    color: #000;
-    border-bottom: 1px solid #b5b5b56e;
-    -webkit-box-shadow: 0 4px 12px 0 rgba(0,0,0,.05)!important; 
-    -moz-box-shadow: 0 4px 12px 0 rgba(0,0,0,.05)!important;
-    box-shadow: 0 4px 12px 0 rgba(0,0,0,.05)!important;
-  }
+.navbar {
+  background-color: rgba(255, 255, 255, 0.97) !important;
+  color: #000;
+  border-bottom: 1px solid #b5b5b56e;
+  -webkit-box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05) !important;
+  -moz-box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05) !important;
+}
 
-  .brand-img
-  {
-    height: 40px;
-    margin-right: 10px;
-    margin-bottom: 4px;
+.brand-img {
+  height: 40px;
+  margin-right: 10px;
+  margin-bottom: 4px;
+}
+.brand-text {
+  text-decoration: none;
+  color: #000;
+
+  &:hover {
+    text-decoration: none;
   }
-  .user-icon
-  {
-    color: #606061;
-    font-size: 1.4em;
+}
+a:hover {
+  text-decoration: none;
+}
+.user-icon {
+  color: #606061;
+  font-size: 1.4em;
+}
+.username {
+  font-size: 0.8em;
+  margin-left: 5px;
+}
+.pull-right {
+  float: right;
+  margin-top: 3px;
+  span {
+    vertical-align: middle;
   }
-  .username
-  {
-    font-size: 0.8em;
-    margin-left: 5px;
-  }
-  .pull-right
-  {
-    float: right;
-    margin-top: 3px;
-    span{
-      vertical-align: middle;
-    }
-  }
-  button:focus {
-    outline: none;
+}
+button:focus {
+  outline: none;
 }
