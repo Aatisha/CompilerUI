@@ -19,8 +19,8 @@
       <div  *ngFor="let message of messages | async">
       <div class="chat-message clearfix">
 
-        <img *ngIf="message.sentBy === 'You'" src="../../../assets/icons/user.svg" alt="" width="32" height="32">
-        <img *ngIf="message.sentBy === 'Bot'" src="../../../assets/icons/bot.svg" alt="" width="32" height="32">
+        <img *ngIf="message.sentBy === 'You'" src="assets/icons/user.svg" alt="" width="32" height="32">
+        <img *ngIf="message.sentBy === 'Bot'" src="assets/icons/bot.svg" alt="" width="32" height="32">
 
         <div class="chat-message-content clearfix">
 
