@@ -4,7 +4,7 @@ import { ApiAiClient } from 'api-ai-javascript/es6/ApiAiClient'
 
 import { Observable } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
-import {Message} from '../../models/message';
+import { Message } from '../../models/message';
 @Injectable({
   providedIn: 'root'
 })
